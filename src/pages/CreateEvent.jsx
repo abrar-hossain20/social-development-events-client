@@ -4,10 +4,12 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { toast } from "react-toastify";
 import { AuthContext } from "../context/AuthContext";
+import { EventContext } from "../context/EventContext";
 import { FaCalendarAlt } from "react-icons/fa";
 
 const CreateEvent = () => {
   const { user } = useContext(AuthContext);
+  const { addEvent } = useContext(EventContext);
   const navigate = useNavigate();
   const [eventDate, setEventDate] = useState(null);
 
@@ -62,12 +64,9 @@ const CreateEvent = () => {
     };
 
     try {
-      // Here you would send the data to your backend
-      // For now, we'll simulate success
-      console.log("Event Data:", eventData);
-
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // Add event to context
+      const newEvent = addEvent(eventData);
+      console.log("Event created:", newEvent);
 
       toast.success("Event created successfully!");
       navigate("/upcoming-events");

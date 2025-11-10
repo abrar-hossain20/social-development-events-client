@@ -160,7 +160,9 @@ const EventProvider = ({ children }) => {
     joinedEvents,
   };
 
-  return <EventContext value={eventInfo}>{children}</EventContext>;
+  return (
+    <EventContext.Provider value={eventInfo}>{children}</EventContext.Provider>
+  );
 };
 
 export default EventProvider;

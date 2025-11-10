@@ -6,6 +6,8 @@ import Signup from "../pages/Signup";
 import CreateEvent from "../pages/CreateEvent";
 import UpcomingEvents from "../pages/UpcomingEvents";
 import EventDetails from "../pages/EventDetails";
+import ManageEvents from "../pages/ManageEvents";
+import JoinedEvents from "../pages/JoinedEvents";
 import PrivateRoute from "../privateRoutes/PrivateRoute";
 
 export const router = createBrowserRouter([
@@ -30,6 +32,22 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <CreateEvent></CreateEvent>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/manage-events",
+        element: (
+          <PrivateRoute>
+            <ManageEvents></ManageEvents>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/joined-events",
+        element: (
+          <PrivateRoute>
+            <JoinedEvents></JoinedEvents>
           </PrivateRoute>
         ),
       },

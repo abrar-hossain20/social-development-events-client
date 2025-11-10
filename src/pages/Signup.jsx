@@ -104,54 +104,21 @@ const Signup = () => {
   };
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-        padding: "20px",
-      }}
-    >
-      <div
-        style={{
-          backgroundColor: "white",
-          borderRadius: "20px",
-          boxShadow: "0 20px 60px rgba(0,0,0,0.3)",
-          maxWidth: "450px",
-          width: "100%",
-          padding: "40px",
-        }}
-      >
-        <div style={{ textAlign: "center", marginBottom: "30px" }}>
-          <h2
-            style={{
-              fontSize: "32px",
-              fontWeight: "700",
-              color: "#333",
-              marginBottom: "8px",
-            }}
-          >
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 to-purple-600 p-5">
+      <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-10">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-gray-800 mb-2">
             Create Account
           </h2>
-          <p style={{ color: "#666", fontSize: "14px" }}>
+          <p className="text-gray-600 text-sm">
             Join our community and start making a difference
           </p>
         </div>
 
         <form onSubmit={handleSignup}>
           {/* Name Input */}
-          <div style={{ marginBottom: "20px" }}>
-            <label
-              style={{
-                display: "block",
-                marginBottom: "8px",
-                color: "#333",
-                fontSize: "14px",
-                fontWeight: "600",
-              }}
-            >
+          <div className="mb-5">
+            <label className="block mb-2 text-gray-800 text-sm font-semibold">
               Full Name
             </label>
             <input
@@ -159,32 +126,13 @@ const Signup = () => {
               name="name"
               required
               placeholder="Enter your full name"
-              style={{
-                width: "100%",
-                padding: "12px 16px",
-                border: "2px solid #e0e0e0",
-                borderRadius: "8px",
-                fontSize: "14px",
-                transition: "border-color 0.3s",
-                outline: "none",
-                boxSizing: "border-box",
-              }}
-              onFocus={(e) => (e.target.style.borderColor = "#667eea")}
-              onBlur={(e) => (e.target.style.borderColor = "#e0e0e0")}
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-sm transition-colors duration-300 outline-none focus:border-indigo-500"
             />
           </div>
 
           {/* Email Input */}
-          <div style={{ marginBottom: "20px" }}>
-            <label
-              style={{
-                display: "block",
-                marginBottom: "8px",
-                color: "#333",
-                fontSize: "14px",
-                fontWeight: "600",
-              }}
-            >
+          <div className="mb-5">
+            <label className="block mb-2 text-gray-800 text-sm font-semibold">
               Email Address
             </label>
             <input
@@ -192,32 +140,13 @@ const Signup = () => {
               name="email"
               required
               placeholder="Enter your email"
-              style={{
-                width: "100%",
-                padding: "12px 16px",
-                border: "2px solid #e0e0e0",
-                borderRadius: "8px",
-                fontSize: "14px",
-                transition: "border-color 0.3s",
-                outline: "none",
-                boxSizing: "border-box",
-              }}
-              onFocus={(e) => (e.target.style.borderColor = "#667eea")}
-              onBlur={(e) => (e.target.style.borderColor = "#e0e0e0")}
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-sm transition-colors duration-300 outline-none focus:border-indigo-500"
             />
           </div>
 
           {/* Photo URL Input */}
-          <div style={{ marginBottom: "20px" }}>
-            <label
-              style={{
-                display: "block",
-                marginBottom: "8px",
-                color: "#333",
-                fontSize: "14px",
-                fontWeight: "600",
-              }}
-            >
+          <div className="mb-5">
+            <label className="block mb-2 text-gray-800 text-sm font-semibold">
               Photo URL
             </label>
             <input
@@ -225,82 +154,32 @@ const Signup = () => {
               name="photo"
               required
               placeholder="Enter your photo URL"
-              style={{
-                width: "100%",
-                padding: "12px 16px",
-                border: "2px solid #e0e0e0",
-                borderRadius: "8px",
-                fontSize: "14px",
-                transition: "border-color 0.3s",
-                outline: "none",
-                boxSizing: "border-box",
-              }}
-              onFocus={(e) => (e.target.style.borderColor = "#667eea")}
-              onBlur={(e) => (e.target.style.borderColor = "#e0e0e0")}
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-sm transition-colors duration-300 outline-none focus:border-indigo-500"
             />
           </div>
 
           {/* Password Input */}
-          <div style={{ marginBottom: "20px" }}>
-            <label
-              style={{
-                display: "block",
-                marginBottom: "8px",
-                color: "#333",
-                fontSize: "14px",
-                fontWeight: "600",
-              }}
-            >
+          <div className="mb-5">
+            <label className="block mb-2 text-gray-800 text-sm font-semibold">
               Password
             </label>
-            <div style={{ position: "relative" }}>
+            <div className="relative">
               <input
                 type={show ? "text" : "password"}
                 name="password"
                 required
                 placeholder="Create a strong password"
-                style={{
-                  width: "100%",
-                  padding: "12px 16px",
-                  paddingRight: "45px",
-                  border: "2px solid #e0e0e0",
-                  borderRadius: "8px",
-                  fontSize: "14px",
-                  transition: "border-color 0.3s",
-                  outline: "none",
-                  boxSizing: "border-box",
-                }}
-                onFocus={(e) => (e.target.style.borderColor = "#667eea")}
-                onBlur={(e) => (e.target.style.borderColor = "#e0e0e0")}
+                className="w-full px-4 py-3 pr-12 border-2 border-gray-300 rounded-lg text-sm transition-colors duration-300 outline-none focus:border-indigo-500"
               />
               <button
                 type="button"
                 onClick={() => setShow(!show)}
-                style={{
-                  position: "absolute",
-                  right: "12px",
-                  top: "50%",
-                  transform: "translateY(-50%)",
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
-                  color: "#666",
-                  padding: "4px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 p-1 flex items-center"
               >
                 {show ? <IoEyeOff size={20} /> : <FaEye size={20} />}
               </button>
             </div>
-            <p
-              style={{
-                fontSize: "12px",
-                color: "#666",
-                marginTop: "6px",
-                lineHeight: "1.4",
-              }}
-            >
+            <p className="text-xs text-gray-600 mt-1.5 leading-snug">
               Must contain at least 6 characters, one uppercase and one
               lowercase letter
             </p>
@@ -309,45 +188,19 @@ const Signup = () => {
           {/* Sign Up Button */}
           <button
             type="submit"
-            style={{
-              width: "100%",
-              padding: "14px",
-              background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-              color: "white",
-              border: "none",
-              borderRadius: "8px",
-              fontSize: "16px",
-              fontWeight: "600",
-              cursor: "pointer",
-              transition: "transform 0.2s, box-shadow 0.2s",
-              marginBottom: "20px",
-            }}
-            onMouseOver={(e) => {
-              e.target.style.transform = "translateY(-2px)";
-              e.target.style.boxShadow = "0 10px 20px rgba(102, 126, 234, 0.4)";
-            }}
-            onMouseOut={(e) => {
-              e.target.style.transform = "translateY(0)";
-              e.target.style.boxShadow = "none";
-            }}
+            className="w-full py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-lg text-base font-semibold cursor-pointer transition-all duration-200 mb-5 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-indigo-500/40"
           >
             Create Account
           </button>
         </form>
 
         {/* Login Link */}
-        <div style={{ textAlign: "center", marginTop: "20px" }}>
-          <p style={{ color: "#666", fontSize: "14px" }}>
+        <div className="text-center mt-5">
+          <p className="text-gray-600 text-sm">
             Already have an account?{" "}
             <Link
               to="/signin"
-              style={{
-                color: "#667eea",
-                textDecoration: "none",
-                fontWeight: "600",
-              }}
-              onMouseOver={(e) => (e.target.style.textDecoration = "underline")}
-              onMouseOut={(e) => (e.target.style.textDecoration = "none")}
+              className="text-indigo-500 font-semibold hover:underline"
             >
               Sign In
             </Link>

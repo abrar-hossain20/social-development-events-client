@@ -5,9 +5,6 @@ import {
   FaHandHoldingHeart,
   FaCalendarAlt,
   FaMapMarkerAlt,
-  FaLeaf,
-  FaBroom,
-  FaRecycle,
   FaBook,
 } from "react-icons/fa";
 
@@ -61,90 +58,25 @@ const Home = () => {
   return (
     <div>
       {/* Banner Section */}
-      <section
-        style={{
-          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-          color: "white",
-          padding: "80px 20px",
-          textAlign: "center",
-        }}
-      >
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <h1
-            style={{
-              fontSize: "48px",
-              fontWeight: "700",
-              marginBottom: "20px",
-              lineHeight: "1.2",
-            }}
-          >
+      <section className="bg-gradient-to-br from-indigo-500 to-purple-600 text-white py-20 px-5 text-center">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-5xl font-bold mb-5 leading-tight">
             Make a Difference in Your Community
           </h1>
-          <p
-            style={{
-              fontSize: "20px",
-              marginBottom: "40px",
-              opacity: "0.95",
-              maxWidth: "700px",
-              margin: "0 auto 40px",
-              lineHeight: "1.6",
-            }}
-          >
+          <p className="text-xl mb-10 opacity-95 max-w-3xl mx-auto leading-relaxed">
             Join thousands of volunteers creating positive social impact through
             community-driven events. Together, we can build a better tomorrow.
           </p>
-          <div
-            style={{
-              display: "flex",
-              gap: "20px",
-              justifyContent: "center",
-              flexWrap: "wrap",
-            }}
-          >
+          <div className="flex gap-5 justify-center flex-wrap">
             <Link
               to="/upcoming-events"
-              style={{
-                padding: "15px 35px",
-                background: "white",
-                color: "#667eea",
-                borderRadius: "8px",
-                textDecoration: "none",
-                fontWeight: "600",
-                fontSize: "16px",
-                transition: "transform 0.3s, box-shadow 0.3s",
-                display: "inline-block",
-              }}
-              onMouseOver={(e) => {
-                e.target.style.transform = "translateY(-3px)";
-                e.target.style.boxShadow = "0 10px 25px rgba(0,0,0,0.2)";
-              }}
-              onMouseOut={(e) => {
-                e.target.style.transform = "translateY(0)";
-                e.target.style.boxShadow = "none";
-              }}
+              className="px-9 py-4 bg-white text-indigo-500 rounded-lg no-underline font-semibold text-base transition-all duration-300 inline-block hover:-translate-y-1 hover:shadow-2xl"
             >
               Explore Events
             </Link>
             <Link
               to="/register"
-              style={{
-                padding: "15px 35px",
-                background: "rgba(255,255,255,0.2)",
-                color: "white",
-                border: "2px solid white",
-                borderRadius: "8px",
-                textDecoration: "none",
-                fontWeight: "600",
-                fontSize: "16px",
-                transition: "background 0.3s",
-                display: "inline-block",
-              }}
-              onMouseOver={(e) => {
-                e.target.style.background = "rgba(255,255,255,0.3)";
-              }}
-              onMouseOut={(e) => {
-                e.target.style.background = "rgba(255,255,255,0.2)";
-              }}
+              className="px-9 py-4 bg-white/20 text-white border-2 border-white rounded-lg no-underline font-semibold text-base transition-all duration-300 inline-block hover:bg-white/30"
             >
               Get Started
             </Link>
@@ -153,238 +85,70 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section style={{ padding: "80px 20px", backgroundColor: "#f8f9fa" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <h2
-              style={{
-                fontSize: "36px",
-                fontWeight: "700",
-                color: "#333",
-                marginBottom: "15px",
-              }}
-            >
+      <section className="py-20 px-5 bg-gray-100">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-15">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
               Why Join Our Platform?
             </h2>
-            <p
-              style={{
-                fontSize: "18px",
-                color: "#666",
-                maxWidth: "600px",
-                margin: "0 auto",
-              }}
-            >
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Discover the features that make community engagement simple and
               impactful
             </p>
           </div>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "30px",
-            }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-15">
             {/* Feature 1 */}
-            <div
-              style={{
-                background: "white",
-                padding: "35px",
-                borderRadius: "12px",
-                textAlign: "center",
-                boxShadow: "0 5px 15px rgba(0,0,0,0.08)",
-                transition: "transform 0.3s, box-shadow 0.3s",
-              }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.boxShadow =
-                  "0 10px 30px rgba(102, 126, 234, 0.2)";
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 5px 15px rgba(0,0,0,0.08)";
-              }}
-            >
-              <div
-                style={{
-                  width: "70px",
-                  height: "70px",
-                  background:
-                    "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-                  borderRadius: "50%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 20px",
-                }}
-              >
+            <div className="bg-white p-9 rounded-xl text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/20">
+              <div className="w-18 h-18 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-5">
                 <FaCalendarAlt size={30} color="white" />
               </div>
-              <h3
-                style={{
-                  fontSize: "22px",
-                  fontWeight: "600",
-                  color: "#333",
-                  marginBottom: "12px",
-                }}
-              >
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">
                 Easy Event Creation
               </h3>
-              <p style={{ fontSize: "15px", color: "#666", lineHeight: "1.6" }}>
+              <p className="text-sm text-gray-600 leading-relaxed">
                 Create and manage social development events in minutes with our
                 intuitive interface
               </p>
             </div>
 
             {/* Feature 2 */}
-            <div
-              style={{
-                background: "white",
-                padding: "35px",
-                borderRadius: "12px",
-                textAlign: "center",
-                boxShadow: "0 5px 15px rgba(0,0,0,0.08)",
-                transition: "transform 0.3s, box-shadow 0.3s",
-              }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.boxShadow =
-                  "0 10px 30px rgba(102, 126, 234, 0.2)";
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 5px 15px rgba(0,0,0,0.08)";
-              }}
-            >
-              <div
-                style={{
-                  width: "70px",
-                  height: "70px",
-                  background:
-                    "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-                  borderRadius: "50%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 20px",
-                }}
-              >
+            <div className="bg-white p-9 rounded-xl text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/20">
+              <div className="w-18 h-18 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-5">
                 <FaUsers size={30} color="white" />
               </div>
-              <h3
-                style={{
-                  fontSize: "22px",
-                  fontWeight: "600",
-                  color: "#333",
-                  marginBottom: "12px",
-                }}
-              >
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">
                 Community Building
               </h3>
-              <p style={{ fontSize: "15px", color: "#666", lineHeight: "1.6" }}>
+              <p className="text-sm text-gray-600 leading-relaxed">
                 Connect with like-minded individuals and build a stronger
                 community together
               </p>
             </div>
 
             {/* Feature 3 */}
-            <div
-              style={{
-                background: "white",
-                padding: "35px",
-                borderRadius: "12px",
-                textAlign: "center",
-                boxShadow: "0 5px 15px rgba(0,0,0,0.08)",
-                transition: "transform 0.3s, box-shadow 0.3s",
-              }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.boxShadow =
-                  "0 10px 30px rgba(102, 126, 234, 0.2)";
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 5px 15px rgba(0,0,0,0.08)";
-              }}
-            >
-              <div
-                style={{
-                  width: "70px",
-                  height: "70px",
-                  background:
-                    "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-                  borderRadius: "50%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 20px",
-                }}
-              >
+            <div className="bg-white p-9 rounded-xl text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/20">
+              <div className="w-18 h-18 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-5">
                 <FaMapMarkerAlt size={30} color="white" />
               </div>
-              <h3
-                style={{
-                  fontSize: "22px",
-                  fontWeight: "600",
-                  color: "#333",
-                  marginBottom: "12px",
-                }}
-              >
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">
                 Local Impact
               </h3>
-              <p style={{ fontSize: "15px", color: "#666", lineHeight: "1.6" }}>
+              <p className="text-sm text-gray-600 leading-relaxed">
                 Find and join events in your local area to make an immediate
                 impact
               </p>
             </div>
 
             {/* Feature 4 */}
-            <div
-              style={{
-                background: "white",
-                padding: "35px",
-                borderRadius: "12px",
-                textAlign: "center",
-                boxShadow: "0 5px 15px rgba(0,0,0,0.08)",
-                transition: "transform 0.3s, box-shadow 0.3s",
-              }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.boxShadow =
-                  "0 10px 30px rgba(102, 126, 234, 0.2)";
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 5px 15px rgba(0,0,0,0.08)";
-              }}
-            >
-              <div
-                style={{
-                  width: "70px",
-                  height: "70px",
-                  background:
-                    "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-                  borderRadius: "50%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 20px",
-                }}
-              >
+            <div className="bg-white p-9 rounded-xl text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/20">
+              <div className="w-18 h-18 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-5">
                 <FaHandHoldingHeart size={30} color="white" />
               </div>
-              <h3
-                style={{
-                  fontSize: "22px",
-                  fontWeight: "600",
-                  color: "#333",
-                  marginBottom: "12px",
-                }}
-              >
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">
                 Track Your Impact
               </h3>
-              <p style={{ fontSize: "15px", color: "#666", lineHeight: "1.6" }}>
+              <p className="text-sm text-gray-600 leading-relaxed">
                 Keep track of all the events you've joined and the difference
                 you've made
               </p>
@@ -394,88 +158,33 @@ const Home = () => {
       </section>
 
       {/* Gallery Section */}
-      <section style={{ padding: "80px 20px", backgroundColor: "white" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <h2
-              style={{
-                fontSize: "36px",
-                fontWeight: "700",
-                color: "#333",
-                marginBottom: "15px",
-              }}
-            >
+      <section className="py-20 px-5 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-15">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
               Community in Action
             </h2>
-            <p
-              style={{
-                fontSize: "18px",
-                color: "#666",
-                maxWidth: "600px",
-                margin: "0 auto",
-              }}
-            >
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               See the positive change we're creating together across Bangladesh
             </p>
           </div>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-              gap: "25px",
-            }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {galleryImages.map((item) => (
               <div
                 key={item.id}
-                style={{
-                  borderRadius: "12px",
-                  overflow: "hidden",
-                  boxShadow: "0 5px 15px rgba(0,0,0,0.1)",
-                  transition: "transform 0.3s, box-shadow 0.3s",
-                  cursor: "pointer",
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.transform = "scale(1.03)";
-                  e.currentTarget.style.boxShadow =
-                    "0 10px 30px rgba(0,0,0,0.2)";
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.transform = "scale(1)";
-                  e.currentTarget.style.boxShadow =
-                    "0 5px 15px rgba(0,0,0,0.1)";
-                }}
+                className="rounded-xl overflow-hidden shadow-md transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-2xl"
               >
                 <div
-                  style={{
-                    height: "250px",
-                    backgroundImage: `url(${item.image})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
+                  className="h-64 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${item.image})` }}
                 />
-                <div style={{ padding: "20px", background: "white" }}>
-                  <h3
-                    style={{
-                      fontSize: "18px",
-                      fontWeight: "600",
-                      color: "#333",
-                      marginBottom: "8px",
-                    }}
-                  >
+                <div className="p-5 bg-white">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
                     {item.title}
                   </h3>
-                  <p
-                    style={{
-                      fontSize: "14px",
-                      color: "#666",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "5px",
-                    }}
-                  >
-                    <FaMapMarkerAlt size={14} color="#667eea" />
+                  <p className="text-sm text-gray-600 flex items-center gap-1">
+                    <FaMapMarkerAlt size={14} className="text-indigo-500" />
                     {item.location}
                   </p>
                 </div>
@@ -486,104 +195,30 @@ const Home = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section
-        style={{
-          padding: "80px 20px",
-          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-          color: "white",
-        }}
-      >
-        <div
-          style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}
-        >
-          <div
-            style={{
-              width: "80px",
-              height: "80px",
-              background: "rgba(255,255,255,0.2)",
-              borderRadius: "50%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              margin: "0 auto 25px",
-            }}
-          >
+      <section className="py-20 px-5 bg-gradient-to-br from-indigo-500 to-purple-600 text-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
             <FaBook size={35} color="white" />
           </div>
-          <h2
-            style={{
-              fontSize: "36px",
-              fontWeight: "700",
-              marginBottom: "15px",
-            }}
-          >
-            Stay Updated
-          </h2>
-          <p
-            style={{
-              fontSize: "18px",
-              marginBottom: "40px",
-              opacity: "0.95",
-              lineHeight: "1.6",
-            }}
-          >
+          <h2 className="text-4xl font-bold mb-4">Stay Updated</h2>
+          <p className="text-lg mb-10 opacity-95 leading-relaxed">
             Subscribe to our newsletter and get the latest updates about
             upcoming events, community stories, and volunteer opportunities
             delivered to your inbox.
           </p>
 
-          <div
-            style={{
-              maxWidth: "600px",
-              margin: "0 auto",
-              display: "flex",
-              gap: "15px",
-              flexWrap: "wrap",
-              justifyContent: "center",
-            }}
-          >
+          <div className="max-w-2xl mx-auto flex gap-4 flex-wrap justify-center">
             <input
               type="email"
               placeholder="Enter your email address"
-              style={{
-                flex: "1",
-                minWidth: "280px",
-                padding: "15px 20px",
-                border: "none",
-                borderRadius: "8px",
-                fontSize: "16px",
-                outline: "none",
-                backgroundColor: "white",
-                color: "#333",
-                boxSizing: "border-box",
-              }}
+              className="flex-1 min-w-[280px] px-5 py-4 border-none rounded-lg text-base outline-none text-gray-800 bg-white"
             />
-            <button
-              style={{
-                padding: "15px 40px",
-                background: "white",
-                color: "#667eea",
-                border: "none",
-                borderRadius: "8px",
-                fontSize: "16px",
-                fontWeight: "600",
-                cursor: "pointer",
-                transition: "transform 0.3s, box-shadow 0.3s",
-              }}
-              onMouseOver={(e) => {
-                e.target.style.transform = "translateY(-2px)";
-                e.target.style.boxShadow = "0 10px 25px rgba(0,0,0,0.2)";
-              }}
-              onMouseOut={(e) => {
-                e.target.style.transform = "translateY(0)";
-                e.target.style.boxShadow = "none";
-              }}
-            >
+            <button className="px-10 py-4 bg-white text-indigo-500 border-none rounded-lg text-base font-semibold cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
               Subscribe
             </button>
           </div>
 
-          <p style={{ fontSize: "14px", marginTop: "20px", opacity: "0.8" }}>
+          <p className="text-sm mt-5 opacity-80">
             We respect your privacy. Unsubscribe at any time.
           </p>
         </div>

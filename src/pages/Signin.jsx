@@ -87,54 +87,21 @@ const Signin = () => {
   // console.log();
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-        padding: "20px",
-      }}
-    >
-      <div
-        style={{
-          backgroundColor: "white",
-          borderRadius: "20px",
-          boxShadow: "0 20px 60px rgba(0,0,0,0.3)",
-          maxWidth: "450px",
-          width: "100%",
-          padding: "40px",
-        }}
-      >
-        <div style={{ textAlign: "center", marginBottom: "30px" }}>
-          <h2
-            style={{
-              fontSize: "32px",
-              fontWeight: "700",
-              color: "#333",
-              marginBottom: "8px",
-            }}
-          >
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 to-purple-600 p-5">
+      <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-10">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-gray-800 mb-2">
             Welcome Back
           </h2>
-          <p style={{ color: "#666", fontSize: "14px" }}>
+          <p className="text-gray-600 text-sm">
             Sign in to continue to Social Events
           </p>
         </div>
 
         <form onSubmit={handleSignin}>
           {/* Email Input */}
-          <div style={{ marginBottom: "20px" }}>
-            <label
-              style={{
-                display: "block",
-                marginBottom: "8px",
-                color: "#333",
-                fontSize: "14px",
-                fontWeight: "600",
-              }}
-            >
+          <div className="mb-5">
+            <label className="block mb-2 text-gray-800 text-sm font-semibold">
               Email Address
             </label>
             <input
@@ -143,70 +110,27 @@ const Signin = () => {
               name="email"
               required
               placeholder="Enter your email"
-              style={{
-                width: "100%",
-                padding: "12px 16px",
-                border: "2px solid #e0e0e0",
-                borderRadius: "8px",
-                fontSize: "14px",
-                transition: "border-color 0.3s",
-                outline: "none",
-                boxSizing: "border-box",
-              }}
-              onFocus={(e) => (e.target.style.borderColor = "#667eea")}
-              onBlur={(e) => (e.target.style.borderColor = "#e0e0e0")}
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-sm transition-colors duration-300 outline-none focus:border-indigo-500"
             />
           </div>
 
           {/* Password Input */}
-          <div style={{ marginBottom: "10px" }}>
-            <label
-              style={{
-                display: "block",
-                marginBottom: "8px",
-                color: "#333",
-                fontSize: "14px",
-                fontWeight: "600",
-              }}
-            >
+          <div className="mb-3">
+            <label className="block mb-2 text-gray-800 text-sm font-semibold">
               Password
             </label>
-            <div style={{ position: "relative" }}>
+            <div className="relative">
               <input
                 type={show ? "text" : "password"}
                 name="password"
                 required
                 placeholder="Enter your password"
-                style={{
-                  width: "100%",
-                  padding: "12px 16px",
-                  paddingRight: "45px",
-                  border: "2px solid #e0e0e0",
-                  borderRadius: "8px",
-                  fontSize: "14px",
-                  transition: "border-color 0.3s",
-                  outline: "none",
-                  boxSizing: "border-box",
-                }}
-                onFocus={(e) => (e.target.style.borderColor = "#667eea")}
-                onBlur={(e) => (e.target.style.borderColor = "#e0e0e0")}
+                className="w-full px-4 py-3 pr-12 border-2 border-gray-300 rounded-lg text-sm transition-colors duration-300 outline-none focus:border-indigo-500"
               />
               <button
                 type="button"
                 onClick={() => setShow(!show)}
-                style={{
-                  position: "absolute",
-                  right: "12px",
-                  top: "50%",
-                  transform: "translateY(-50%)",
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
-                  color: "#666",
-                  padding: "4px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 p-1 flex items-center"
               >
                 {show ? <IoEyeOff size={20} /> : <FaEye size={20} />}
               </button>
@@ -214,22 +138,11 @@ const Signin = () => {
           </div>
 
           {/* Forget Password */}
-          <div style={{ textAlign: "right", marginBottom: "20px" }}>
+          <div className="text-right mb-5">
             <button
               type="button"
               onClick={handleForgetPassword}
-              style={{
-                background: "none",
-                border: "none",
-                color: "#667eea",
-                fontSize: "13px",
-                cursor: "pointer",
-                padding: "0",
-                textDecoration: "none",
-                fontWeight: "500",
-              }}
-              onMouseOver={(e) => (e.target.style.textDecoration = "underline")}
-              onMouseOut={(e) => (e.target.style.textDecoration = "none")}
+              className="text-indigo-500 text-xs font-medium hover:underline"
             >
               Forgot Password?
             </button>
@@ -238,83 +151,24 @@ const Signin = () => {
           {/* Login Button */}
           <button
             type="submit"
-            style={{
-              width: "100%",
-              padding: "14px",
-              background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-              color: "white",
-              border: "none",
-              borderRadius: "8px",
-              fontSize: "16px",
-              fontWeight: "600",
-              cursor: "pointer",
-              transition: "transform 0.2s, box-shadow 0.2s",
-              marginBottom: "20px",
-            }}
-            onMouseOver={(e) => {
-              e.target.style.transform = "translateY(-2px)";
-              e.target.style.boxShadow = "0 10px 20px rgba(102, 126, 234, 0.4)";
-            }}
-            onMouseOut={(e) => {
-              e.target.style.transform = "translateY(0)";
-              e.target.style.boxShadow = "none";
-            }}
+            className="w-full py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-lg text-base font-semibold cursor-pointer transition-all duration-200 mb-5 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-indigo-500/40"
           >
             Sign In
           </button>
         </form>
 
         {/* Divider */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            margin: "20px 0",
-          }}
-        >
-          <div style={{ flex: 1, height: "1px", background: "#e0e0e0" }}></div>
-          <span
-            style={{
-              padding: "0 15px",
-              color: "#999",
-              fontSize: "13px",
-              fontWeight: "500",
-            }}
-          >
-            OR
-          </span>
-          <div style={{ flex: 1, height: "1px", background: "#e0e0e0" }}></div>
+        <div className="flex items-center my-5">
+          <div className="flex-1 h-px bg-gray-300"></div>
+          <span className="px-4 text-gray-500 text-xs font-medium">OR</span>
+          <div className="flex-1 h-px bg-gray-300"></div>
         </div>
 
         {/* Google Sign In */}
         <button
           type="button"
           onClick={handleGoogleSignin}
-          style={{
-            width: "100%",
-            padding: "12px",
-            background: "white",
-            color: "#333",
-            border: "2px solid #e0e0e0",
-            borderRadius: "8px",
-            fontSize: "14px",
-            fontWeight: "600",
-            cursor: "pointer",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "10px",
-            transition: "all 0.3s",
-            marginBottom: "20px",
-          }}
-          onMouseOver={(e) => {
-            e.target.style.borderColor = "#667eea";
-            e.target.style.background = "#f8f9ff";
-          }}
-          onMouseOut={(e) => {
-            e.target.style.borderColor = "#e0e0e0";
-            e.target.style.background = "white";
-          }}
+          className="w-full py-3 bg-white text-gray-800 border-2 border-gray-300 rounded-lg text-sm font-semibold cursor-pointer flex items-center justify-center gap-2.5 transition-all duration-300 mb-5 hover:border-indigo-500 hover:bg-indigo-50"
         >
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path
@@ -338,18 +192,12 @@ const Signin = () => {
         </button>
 
         {/* Register Link */}
-        <div style={{ textAlign: "center", marginTop: "20px" }}>
-          <p style={{ color: "#666", fontSize: "14px" }}>
+        <div className="text-center mt-5">
+          <p className="text-gray-600 text-sm">
             Don't have an account?{" "}
             <Link
               to="/register"
-              style={{
-                color: "#667eea",
-                textDecoration: "none",
-                fontWeight: "600",
-              }}
-              onMouseOver={(e) => (e.target.style.textDecoration = "underline")}
-              onMouseOut={(e) => (e.target.style.textDecoration = "none")}
+              className="text-indigo-500 font-semibold hover:underline"
             >
               Sign Up
             </Link>

@@ -150,6 +150,20 @@ const EventProvider = ({ children }) => {
     return events.filter((event) => new Date(event.eventDate) > now);
   };
 
+  // Get events joined by a specific user, sorted by event date
+  const getUserJoinedEvents = (userEmail) => {
+    if (!userEmail) return [];
+
+    const joinedEventsList = events.filter((event) =>
+      event.participants.some((p) => p.email === userEmail)
+    );
+
+    // Sort by event date (ascending - earliest first)
+    return joinedEventsList.sort(
+      (a, b) => new Date(a.eventDate) - new Date(b.eventDate)
+    );
+  };
+
   const eventInfo = {
     events,
     addEvent,
@@ -157,6 +171,7 @@ const EventProvider = ({ children }) => {
     joinEvent,
     hasJoinedEvent,
     getUpcomingEvents,
+    getUserJoinedEvents,
     joinedEvents,
   };
 

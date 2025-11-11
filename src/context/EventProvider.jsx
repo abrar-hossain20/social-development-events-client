@@ -164,6 +164,76 @@ const EventProvider = ({ children }) => {
     );
   };
 
+  // Get events created by a specific user
+  const getUserCreatedEvents = (userEmail) => {
+    if (!userEmail) return [];
+
+    return events
+      .filter((event) => event.creatorEmail === userEmail)
+      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)); // Sort by creation date, newest first
+  };
+
+  // Update an event (only by creator)
+  const updateEvent = (eventId, updatedData, userEmail) => {
+    const eventIndex = events.findIndex((event) => event.id === eventId);
+
+    if (eventIndex !== -1) {
+      // Check if user is the creator
+      if (events[eventIndex].creatorEmail !== userEmail) {
+        return {
+          success: false,
+          message: "You can only update your own events",
+        };
+      }
+
+      const updatedEvents = [...events];
+      updatedEvents[eventIndex] = {
+        ...updatedEvents[eventIndex],
+        ...updatedData,
+        id: eventId, // Ensure ID doesn't change
+        creatorEmail: events[eventIndex].creatorEmail, // Ensure creator doesn't change
+        creatorName: events[eventIndex].creatorName,
+        creatorPhoto: events[eventIndex].creatorPhoto,
+        createdAt: events[eventIndex].createdAt,
+        participants: events[eventIndex].participants, // Preserve participants
+      };
+
+      setEvents(updatedEvents);
+      localStorage.setItem("events", JSON.stringify(updatedEvents));
+      return { success: true, message: "Event updated successfully" };
+    }
+
+    return { success: false, message: "Event not found" };
+  };
+
+  // Delete an event (only by creator)
+  const deleteEvent = (eventId, userEmail) => {
+    const eventIndex = events.findIndex((event) => event.id === eventId);
+
+    if (eventIndex !== -1) {
+      // Check if user is the creator
+      if (events[eventIndex].creatorEmail !== userEmail) {
+        return {
+          success: false,
+          message: "You can only delete your own events",
+        };
+      }
+
+      const updatedEvents = events.filter((event) => event.id !== eventId);
+      setEvents(updatedEvents);
+      localStorage.setItem("events", JSON.stringify(updatedEvents));
+
+      // Remove from joined events if anyone joined
+      const updatedJoinedEvents = joinedEvents.filter((id) => id !== eventId);
+      setJoinedEvents(updatedJoinedEvents);
+      localStorage.setItem("joinedEvents", JSON.stringify(updatedJoinedEvents));
+
+      return { success: true, message: "Event deleted successfully" };
+    }
+
+    return { success: false, message: "Event not found" };
+  };
+
   const eventInfo = {
     events,
     addEvent,
@@ -172,6 +242,9 @@ const EventProvider = ({ children }) => {
     hasJoinedEvent,
     getUpcomingEvents,
     getUserJoinedEvents,
+    getUserCreatedEvents,
+    updateEvent,
+    deleteEvent,
     joinedEvents,
   };
 

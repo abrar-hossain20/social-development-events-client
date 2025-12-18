@@ -1,16 +1,26 @@
-# React + Vite
+# Social Events - Community Development Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Site URL:** [Coming Soon]
 
-Currently, two official plugins are available:
+A community-driven event management platform where users can create, join, and track social service events in their local area. This platform connects volunteers with meaningful opportunities to make a positive impact in their communities through organized social development activities.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Key Features
 
-## React Compiler
+- **Easy Event Creation & Management** - Create and organize social development events with detailed information including location, date, event type, and descriptions. Event creators can update or delete their events anytime.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Smart Event Discovery** - Browse upcoming community events in an intuitive grid layout with filtering that automatically hides past events. Each event displays essential information like location, date, and event type for quick decision-making.
 
-## Expanding the ESLint configuration
+- **Seamless Event Participation** - Join events with a single click and track all your registered events in one place. The platform prevents duplicate registrations and provides real-time participant counts.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Secure Authentication System** - Robust Firebase authentication with email/password and Google sign-in options. Features include email verification, password reset functionality, and comprehensive validation for secure user accounts.
+
+- **Personalized Dashboard** - Manage your created events, track events you've joined, and view your community impact all in one place. Events are sorted chronologically with clear visual indicators for past and upcoming activities.
+
+## 🛠️ Technologies Used
+
+- **Frontend:** React.js, React Router, TailwindCSS
+- **Authentication:** Firebase Authentication
+- **Date Management:** React DatePicker
+- **Notifications:** React Toastify
+- **Icons:** React Icons
+- **Build Tool:** Vite

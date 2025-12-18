@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router";
 import {
   FaFacebookF,
-  FaTwitter,
   FaInstagram,
   FaLinkedinIn,
   FaEnvelope,
@@ -10,6 +9,7 @@ import {
   FaMapMarkerAlt,
   FaHeart,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -44,12 +44,12 @@ const Footer = () => {
                 <FaFacebookF size={18} />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-700 hover:bg-indigo-600 rounded-full flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
               >
-                <FaTwitter size={18} />
+                <FaXTwitter size={18} />
               </a>
               <a
                 href="https://instagram.com"
